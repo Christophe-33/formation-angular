@@ -12,7 +12,6 @@ export class UiComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {
-    this.title = 'bienvenue';
     this.menuIsOpen = false;
   }
 

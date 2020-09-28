@@ -1,0 +1,10 @@
+@import "theme";
+
+.active {
+  color: $color-yellow !important;
+}
+
+.nav-link {
+  text-decoration: inherit;
+  color: inherit;
+}
