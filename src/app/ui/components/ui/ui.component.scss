@@ -1,0 +1,69 @@
+@import "theme";
+@import "layout";
+
+header {
+  height: 65px;
+  background: $dark-color;
+  display: flex;
+  padding: 0 15px;
+  align-items: center;
+}
+
+main {
+  background: $light-color;
+  min-height: calc(100vh - 65px);
+  padding-top: 65px;
+}
+
+aside {
+  background: darken($light-color, 10);
+  width: 250px;
+  min-height: 100vh;
+  position: fixed;
+  z-index: 1000;
+  .scroller {
+    overflow-y: auto;
+    max-height: 100vh;
+    padding-bottom: 65px;
+  }
+}
+
+.close-aside aside {
+  width: 0;
+  visibility: hidden;
+}
+
+.close-aside .shadow {
+  display: none;
+}
+
+.shadow {
+  background-color: rgba($dark-color, 0.8);
+  width: 100%;
+  min-height: 100vh;
+  z-index: 1000;
+}
+
+.scroller {
+  background: red;
+}
+
+.page {
+  min-height: calc(100vh - 65px);
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  flex-grow: 1;
+}
+
+footer {
+  background: $dark-color;
+}
+
+@media (min-width: $md-breakpoint) {
+  footer {
+    background-color: rgb(221, 51, 198);
+  }
+}
