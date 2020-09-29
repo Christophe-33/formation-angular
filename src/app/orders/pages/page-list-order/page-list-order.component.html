@@ -1,11 +1,11 @@
 <app-table-light [headers]="tableHearders" *ngIf="ordersList">
   <tr *ngFor="let order of ordersList">
     <td>{{ order.typePresta }}</td>
-    <td>{{ order.client }}</td>
+    <td>{{ order.client | uppercase | lowercase }}</td>
     <td>{{ order.nbJours }}</td>
-    <td>{{ order.tjmHt }}</td>
-    <td>{{ order.totalHt() }}</td>
-    <td>{{ order.totalHt() }}</td>
+    <td>{{ order.tjmHt | currency: "EUR" }}</td>
+    <td>{{ order | total | currency: "EUR" }}</td>
+    <td>{{ order | total: "ttc" | currency: "EUR" }}</td>
     <td>{{ order.state }}</td>
   </tr>
 </app-table-light>
