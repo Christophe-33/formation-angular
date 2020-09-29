@@ -1,12 +1,10 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
-
+import { NgModule } from '@angular/core';
+import { TableLightComponent } from './components/table-light/table-light.component';
 
 @NgModule({
-  declarations: [],
-  imports: [
-    CommonModule
-  ]
+  declarations: [TableLightComponent],
+  imports: [CommonModule],
+  exports: [TableLightComponent],
 })
-export class SharedModule { }
+export class SharedModule {}

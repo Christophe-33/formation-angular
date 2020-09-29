@@ -1,1 +1,12 @@
-<p>page-list-order works!</p>
+<app-table-light [headers]="tableHearders" *ngIf="ordersList">
+  <tr *ngFor="let order of ordersList">
+    <td>{{ order.typePresta }}</td>
+    <td>{{ order.client }}</td>
+    <td>{{ order.nbJours }}</td>
+    <td>{{ order.tjmHt }}</td>
+    <td>{{ order.totalHt() }}</td>
+    <td>{{ order.totalHt() }}</td>
+    <td>{{ order.state }}</td>
+  </tr>
+</app-table-light>
+<div *ngIf="!ordersList">Page en cours de chargement</div>

@@ -9,6 +9,8 @@ import { OrdersService } from '../../services/orders.service';
 })
 export class PageListOrderComponent implements OnInit {
   public ordersList: Order[];
+  public tableHearders: string[];
+
   constructor(private orderService: OrdersService) {}
 
   ngOnInit(): void {
@@ -20,5 +22,14 @@ export class PageListOrderComponent implements OnInit {
         console.log(err);
       }
     );
+    this.tableHearders = [
+      'Type',
+      'Client',
+      'Nb. Jours',
+      'Tjm HT',
+      'Total HT',
+      'Total TTC',
+      'state',
+    ];
   }
 }

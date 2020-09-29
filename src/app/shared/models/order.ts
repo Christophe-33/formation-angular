@@ -1,10 +1,11 @@
+import { StateOrder } from 'src/app/orders/enums/state-order.enum';
 import { OrderI } from '../interfaces/order-i';
 
 export class Order implements OrderI {
   tjmHt: number;
   nbJours: number;
   tva: number;
-  state: string;
+  state: StateOrder = StateOrder.INPROGRESS;
   typePresta: string;
   client: string;
   comment: string;
