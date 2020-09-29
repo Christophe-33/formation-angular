@@ -6,7 +6,17 @@
     <td>{{ order.tjmHt | currency: "EUR" }}</td>
     <td>{{ order | total | currency: "EUR" }}</td>
     <td>{{ order | total: "ttc" | currency: "EUR" }}</td>
-    <td>{{ order.state }}</td>
+    <td appState [state]="order.state">
+      <select (change)="changeState(order, $event)">
+        <option
+          *ngFor="let state of states"
+          [value]="state"
+          [selected]="state === order.state"
+        >
+          {{ state }}
+        </option>
+      </select>
+    </td>
   </tr>
 </app-table-light>
 <div *ngIf="!ordersList">Page en cours de chargement</div>
