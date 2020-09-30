@@ -31,7 +31,7 @@ export class OrdersService {
     this.pCollection = col;
   }
 
-  public changeStat(item: Order, state: StateOrder) {
+  public changeState(item: Order, state: StateOrder) {
     const obj = new Order({ ...item });
     obj.state = state;
     return this.updateItem(obj);

@@ -11,7 +11,7 @@
       "id": 1
     },
     {
-      "state": "In progress",
+      "state": "Cancel",
       "tjmHt": 500,
       "nbJours": 1,
       "tva": 20,
@@ -34,9 +34,9 @@
   "clients": [
     {
       "state": "Active",
+      "name": "Christophe2",
       "tva": 20,
       "id": 1,
-      "name": "Christophe2",
       "ca": 12000,
       "comment": "un comment pour client christophe2"
     },

@@ -36,7 +36,7 @@ export class PageListOrderComponent implements OnInit {
   }
 
   public changeState(item: Order, event) {
-    this.orderService.changeStat(item, event.target.value).subscribe(
+    this.orderService.changeState(item, event.target.value).subscribe(
       (result) => {
         item.state = result.state;
       },
@@ -44,5 +44,9 @@ export class PageListOrderComponent implements OnInit {
         event.target.value = item.state;
       }
     );
+  }
+
+  public testButton() {
+    alert('Le bouton fonctionne');
   }
 }

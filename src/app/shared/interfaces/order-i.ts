@@ -1,8 +1,10 @@
+import { StateOrder } from 'src/app/orders/enums/state-order.enum';
+
 export interface OrderI {
   tjmHt: number;
   nbJours: number;
   tva: number;
-  state: string;
+  state: StateOrder;
   typePresta: string;
   client: string;
   comment: string;

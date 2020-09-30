@@ -19,4 +19,8 @@
     </td>
   </tr>
 </app-table-light>
-<div *ngIf="!ordersList">Page en cours de chargement</div>
+<div *ngIf="!ordersList">Page en cours de chargement...</div>
+
+<app-btn href="http://www.google.com" label="Aller sur google"></app-btn>
+<app-btn route="/clients" label="Aller sur la page client"></app-btn>
+<app-btn [action]="true" label="Test action" (clicked)="testButton()"></app-btn>

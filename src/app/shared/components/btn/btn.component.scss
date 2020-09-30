@@ -1,0 +1,37 @@
+@import "theme";
+@import "fonts";
+
+a,
+button {
+  border: none;
+  margin-left: 10px;
+  color: $light-color;
+  display: inline-block;
+  padding: 1em;
+  font-size: $regular-fz;
+  background: $color-yellow;
+  transition: all 0.5s;
+  &:hover {
+    text-decoration: none;
+    background: darken($color-yellow, 10);
+  }
+}
+
+:host-context(app-template-a) {
+  a,
+  button {
+    background: $color-blue;
+    &:hover {
+      background: darken($color-blue, 10);
+    }
+  }
+}
+:host-context(app-template-b) {
+  a,
+  button {
+    background: $color-success;
+    &:hover {
+      background: darken($color-success, 10);
+    }
+  }
+}
