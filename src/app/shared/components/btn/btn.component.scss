@@ -9,7 +9,7 @@ button {
   display: inline-block;
   padding: 1em;
   font-size: $regular-fz;
-  background: $color-yellow;
+  background: $color-blue;
   transition: all 0.5s;
   &:hover {
     text-decoration: none;
@@ -20,7 +20,7 @@ button {
 :host-context(app-template-a) {
   a,
   button {
-    background: $color-blue;
+    background: $color-error;
     &:hover {
       background: darken($color-blue, 10);
     }
