@@ -1,19 +1,21 @@
-<app-table-light [headers]="tableHeaders" *ngIf="clientsList">
-  <tr *ngFor="let client of clientsList">
-    <td>{{ client.name }}</td>
-    <td>{{ client.ca | currency: "EUR" }}</td>
-    <td>{{ client.comment }}</td>
-    <td appState [state]="client.state">
-      <select (change)="changeState(client, $event)">
-        <option
-          *ngFor="let state of states"
-          [value]="state"
-          [selected]="state === client.state"
-        >
-          {{ state }}
-        </option>
-      </select>
-    </td>
-  </tr>
-</app-table-light>
-<div *ngIf="!clientsList">Page en cours de chargement...</div>
+<app-template-a title="Client">
+  <app-table-light [headers]="tableHeaders" *ngIf="clientsList">
+    <tr *ngFor="let client of clientsList">
+      <td>{{ client.name }}</td>
+      <td>{{ client.ca | currency: "EUR" }}</td>
+      <td>{{ client.comment }}</td>
+      <td appState [state]="client.state">
+        <select (change)="changeState(client, $event)">
+          <option
+            *ngFor="let state of states"
+            [value]="state"
+            [selected]="state === client.state"
+          >
+            {{ state }}
+          </option>
+        </select>
+      </td>
+    </tr>
+  </app-table-light>
+  <div *ngIf="!clientsList">Page en cours de chargement...</div>
+</app-template-a>
