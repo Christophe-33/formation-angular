@@ -1,0 +1,6 @@
+<app-form-order
+ *ngIf="item$ | async as order "[order]="order"
+ (submitted)="updateOrder($event)"
+ >
+
+</app-form-order>

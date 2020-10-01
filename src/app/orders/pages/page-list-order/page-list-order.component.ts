@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { Order } from 'src/app/shared/models/order';
 import { StateOrder } from '../../enums/state-order.enum';
@@ -15,7 +16,8 @@ export class PageListOrderComponent implements OnInit {
   public tableHearders: string[];
   public states = Object.values(StateOrder);
 
-  constructor(private orderService: OrdersService) {}
+  constructor(private orderService: OrdersService,
+    private router: Router) {}
 
   ngOnInit(): void {
     /*this.orderService.collection.subscribe(
@@ -35,6 +37,7 @@ export class PageListOrderComponent implements OnInit {
       'Total HT',
       'Total TTC',
       'state',
+      "Actions"
     ];
   }
 
@@ -51,5 +54,9 @@ export class PageListOrderComponent implements OnInit {
 
   public testButton() {
     alert('Le bouton fonctionne');
+  }
+
+  public edit(item: Order){
+    this.router.navigate(['orders','edit', item.id])
   }
 }
