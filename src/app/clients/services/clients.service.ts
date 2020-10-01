@@ -43,4 +43,8 @@ export class ClientsService {
   public updateItem(item: Client): Observable<Client> {
     return this.http.put<Client>(`${this.urlApi}clients/${item.id}`, item);
   }
+
+  public addItem(item: Client) : Observable<Client>{
+    return this.http.post<Client>(`${this.urlApi}clients`, item);
+  }
 }

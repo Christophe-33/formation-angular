@@ -1,5 +1,5 @@
 <app-template-a title="Client">
-  <app-table-light [headers]="tableHeaders" *ngIf="clientsList">
+  <app-table-light [headers]="tableHeaders" *ngIf="clientsList" class="main-content">
     <tr *ngFor="let client of clientsList">
       <td>{{ client.name }}</td>
       <td>{{ client.ca | currency: "EUR" }}</td>
@@ -18,4 +18,7 @@
     </tr>
   </app-table-light>
   <div *ngIf="!clientsList">Page en cours de chargement...</div>
+  <div class="button-group">
+   <app-btn route="/clients/add" label="Ajouter un client"></app-btn>
+  </div>
 </app-template-a>

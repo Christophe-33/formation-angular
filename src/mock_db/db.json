@@ -126,6 +126,14 @@
       "name": "Modis",
       "ca": 120000,
       "comment": "un comment pour client modis"
+    },
+    {
+      "state": "Active",
+      "name": "Titi",
+      "tva": "5",
+      "id": 3,
+      "ca": "10000",
+      "comment": "Titi comment"
     }
   ]
 }
