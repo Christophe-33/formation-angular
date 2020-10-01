@@ -1,16 +1,6 @@
 {
   "orders": [
     {
-      "tjmHt": "120",
-      "nbJours": 1,
-      "tva": 20,
-      "state": "Cancel",
-      "typePresta": "formation55",
-      "client": "M2i",
-      "id": 1,
-      "comment": "merci m2i"
-    },
-    {
       "state": "Cancel",
       "tjmHt": 500,
       "nbJours": 1,

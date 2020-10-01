@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Observable } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
+import { takeUntil } from 'rxjs/operators';
 import { Order } from 'src/app/shared/models/order';
 import { StateOrder } from '../../enums/state-order.enum';
 import { OrdersService } from '../../services/orders.service';
@@ -12,8 +13,10 @@ import { OrdersService } from '../../services/orders.service';
 })
 export class PageListOrderComponent implements OnInit {
   /* public ordersList: Order[]; */
+  public orders: Order[];
   public collectionOrders$: Observable<Order[]>;
   public tableHearders: string[];
+  public destroy$: Subject<boolean>= new Subject();
   public states = Object.values(StateOrder);
 
   constructor(private orderService: OrdersService,
@@ -39,10 +42,18 @@ export class PageListOrderComponent implements OnInit {
       'state',
       "Actions"
     ];
+
+    this.orderService.refresh$.next(true);
+  }
+
+  ngOnDestroy(){
+    this.destroy$.next(true);
   }
 
   public changeState(item: Order, event) {
-    this.orderService.changeState(item, event.target.value).subscribe(
+    this.orderService.changeState(item, event.target.value)
+    .pipe(takeUntil(this.destroy$))
+    .subscribe(
       (result) => {
         item.state = result.state;
       },
@@ -58,5 +69,15 @@ export class PageListOrderComponent implements OnInit {
 
   public edit(item: Order){
     this.router.navigate(['orders','edit', item.id])
+  }
+
+  public deleteOrder(item: Order){
+    this.orderService.deleteItem(item)
+    .pipe(takeUntil(this.destroy$))
+    .subscribe(
+      (result)=>{
+        this.orderService.refresh$.next(true);
+      }
+    );
   }
 }

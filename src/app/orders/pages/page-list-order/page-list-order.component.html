@@ -25,7 +25,7 @@
       <td>
         <app-icon-update routerLink="edit/{{order.id}}"></app-icon-update>
         <app-icon-update (click)="edit(order)"></app-icon-update>
-        <app-icon-delete></app-icon-delete>
+        <app-icon-delete (click)="deleteOrder(order)"></app-icon-delete>
       </td>
     </tr>
   </app-table-dark>
