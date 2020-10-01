@@ -1,4 +1,4 @@
 <a *ngIf="href" [href]="href">{{ label }}</a>
 <a *ngIf="route" [routerLink]="route">{{ label }}</a>
-<button *ngIf="action" (click)="doAction()" [type]="type">{{ label }}</button>
-<button *ngIf="type == 'submit'" type="submit">{{ label }}</button>
+<button *ngIf="action" (click)="doAction()" [type]="type" [disabled]="disabled">{{ label }}</button>
+<button *ngIf="type == 'submit'" type="submit" [disabled]="disabled">{{ label }}</button>

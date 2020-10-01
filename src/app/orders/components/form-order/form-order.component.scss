@@ -1,0 +1,11 @@
+@import 'theme';
+
+form{
+  .ng-invalid.ng-touched{
+    border:solid 3px $colot-error;
+  }
+
+  .ng-valid.ng-touched{
+    border:solid 3px $colot-success;
+  }
+}

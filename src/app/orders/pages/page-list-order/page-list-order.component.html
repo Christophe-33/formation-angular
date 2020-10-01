@@ -33,40 +33,20 @@
       label="Test action"
       (clicked)="testButton()"
     ></app-btn>
+    <app-btn route="/orders/add" label="Ajouter une commande"></app-btn>
   </div>
 </app-template-a>
-<app-template-b title="Commandes" subtitle="Liste">
-  <app-table-dark
-    [headers]="tableHearders"
-    *ngIf="collectionOrders$ | async as ordersList"
-  >
-    <tr *ngFor="let order of ordersList">
-      <td>{{ order.typePresta }}</td>
-      <td>{{ order.client | uppercase | lowercase }}</td>
-      <td>{{ order.nbJours }}</td>
-      <td>{{ order.tjmHt | currency: "EUR" }}</td>
-      <td>{{ order | total | currency: "EUR" }}</td>
-      <td>{{ order | total: "ttc" | currency: "EUR" }}</td>
-      <td appState [state]="order.state">
-        <select (change)="changeState(order, $event)">
-          <option
-            *ngFor="let state of states"
-            [value]="state"
-            [selected]="state === order.state"
-          >
-            {{ state }}
-          </option>
-        </select>
-      </td>
-    </tr>
-  </app-table-dark>
-  <!--<div *ngIf="!ordersList">Page en cours de chargement...</div-->
 
-  <app-btn href="http://www.google.com" label="Aller sur google"></app-btn>
-  <app-btn route="/clients" label="Aller sur la page client"></app-btn>
-  <app-btn
-    [action]="true"
-    label="Test action"
-    (clicked)="testButton()"
-  ></app-btn>
-</app-template-b>
+<app-text>
+  <h1>Title</h1>
+  <h2>Subtitle</h2>
+  <h3>sub subtitle</h3>
+  <p>Ceci est un texte dans un paragraphe</p>
+</app-text>
+
+<app-text [page]="true">
+  <h1>Title</h1>
+  <h2>Subtitle</h2>
+  <h3>sub subtitle</h3>
+  <p>Ceci est un texte dans un paragraphe</p>
+</app-text>

@@ -3,7 +3,7 @@
   <ng-content select="app-header"></ng-content>
 </header>
 <main [ngClass]="{ 'close-aside': !menuIsOpen }">
-  <div class="shadow position-fixed"></div>
+  <div class="shadow position-fixed" (click)="toggleMenu(false)"></div>
   <aside>
     <div class="scoller">
       <ng-content select="app-nav"></ng-content>

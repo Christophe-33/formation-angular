@@ -1,0 +1,48 @@
+@import "theme";
+@import "fonts";
+
+app-text {
+  display: block;
+  padding: 10px;
+}
+
+h1,
+H2,
+h3,
+p,
+span,
+i,
+li {
+  color: $light-color;
+}
+
+.page {
+  h1,
+  H2,
+  h3,
+  p,
+  span,
+  i,
+  li {
+    color: $dark-color;
+  }
+}
+
+h1 {
+  font-size: $h1-fz;
+}
+
+h2 {
+  font-size: $h2-fz;
+}
+
+h3 {
+  font-size: $h3-fz;
+}
+
+p,
+span,
+i,
+li {
+  font-size: $regular-fz;
+}
