@@ -69,41 +69,11 @@
       "client": "qsdfqsd",
       "id": 9,
       "comment": "Toto est gentil"
-    },
-    {
-      "tjmHt": null,
-      "nbJours": null,
-      "tva": null,
-      "state": "In progress",
-      "typePresta": null,
-      "client": null,
-      "id": 10,
-      "comment": null
-    },
-    {
-      "tjmHt": null,
-      "nbJours": null,
-      "tva": null,
-      "state": "In progress",
-      "typePresta": null,
-      "client": null,
-      "id": 11,
-      "comment": null
-    },
-    {
-      "tjmHt": null,
-      "nbJours": null,
-      "tva": "",
-      "state": "In progress",
-      "typePresta": null,
-      "client": "",
-      "id": 12,
-      "comment": null
     }
   ],
   "clients": [
     {
-      "state": "Active",
+      "state": "Inactif",
       "name": "Christophe2",
       "tva": 20,
       "id": 1,

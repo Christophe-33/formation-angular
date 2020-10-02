@@ -1,5 +1,9 @@
 <app-template-a title="Client">
-  <app-table-light [headers]="tableHeaders" *ngIf="clientsList" class="main-content">
+  <app-table-light
+  class="main-content"
+  [headers]="tableHeaders"
+  *ngIf="collectionClients$ | async as clientsList">
+
     <tr *ngFor="let client of clientsList">
       <td>{{ client.name }}</td>
       <td>{{ client.ca | currency: "EUR" }}</td>
@@ -15,9 +19,13 @@
           </option>
         </select>
       </td>
+    <td>
+      <app-icon-update (click)="edit(client)"></app-icon-update>
+      <app-icon-delete (click)="deleteClient(client)"></app-icon-delete>
+    </td>
     </tr>
   </app-table-light>
-  <div *ngIf="!clientsList">Page en cours de chargement...</div>
+  <!-- <div *ngIf="!clientsList">Page en cours de chargement...</div> -->
   <div class="button-group">
    <app-btn route="/clients/add" label="Ajouter un client"></app-btn>
   </div>

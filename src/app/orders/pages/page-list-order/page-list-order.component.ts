@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { Observable, Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 import { Order } from 'src/app/shared/models/order';
+import { AlertService } from 'src/app/shared/services/alert.service';
 import { StateOrder } from '../../enums/state-order.enum';
 import { OrdersService } from '../../services/orders.service';
 
@@ -19,8 +20,27 @@ export class PageListOrderComponent implements OnInit {
   public destroy$: Subject<boolean>= new Subject();
   public states = Object.values(StateOrder);
 
-  constructor(private orderService: OrdersService,
-    private router: Router) {}
+  constructor(
+    private orderService: OrdersService,
+    private router: Router,
+    private alertService: AlertService
+    ) {}
+
+    public successMsg(){
+      this.alertService.success("un message success")
+    }
+
+    public errorMsg(){
+      this.alertService.error("un message error")
+    }
+
+    public warningMsg(){
+      this.alertService.warning("un message warning")
+    }
+
+    public infoMsg(){
+      this.alertService.info("un message info")
+    }
 
   ngOnInit(): void {
     /*this.orderService.collection.subscribe(

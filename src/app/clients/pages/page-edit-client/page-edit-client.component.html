@@ -1,0 +1,5 @@
+<app-form-client
+ *ngIf="item$ | async as client "[client]="client"
+ (submitted)="updateClient($event)"
+ >
+</app-form-client>

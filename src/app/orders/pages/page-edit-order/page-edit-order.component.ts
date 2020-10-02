@@ -43,8 +43,6 @@ export class PageEditOrderComponent implements OnInit {
         this.router.navigate(["orders"]);
       }
     );
-
-
   }
 
 }

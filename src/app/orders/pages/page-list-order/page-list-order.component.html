@@ -1,4 +1,10 @@
 <app-template-a title="Commandes" subtitle="Liste">
+  <div class="button-group">
+    <app-btn [action]="true" (clicked)="successMsg()" label="success"></app-btn>
+    <app-btn [action]="true" (clicked)="errorMsg()" label="error"></app-btn>
+    <app-btn [action]="true" (clicked)="warningMsg()" label="warning"></app-btn>
+    <app-btn [action]="true" (clicked)="infoMsg()" label="info"></app-btn>
+  </div>
   <app-table-dark
     class="main-content"
     [headers]="tableHearders"
@@ -30,7 +36,7 @@
     </tr>
   </app-table-dark>
   <!--<div *ngIf="!ordersList">Page en cours de chargement...</div-->
-  <div class="button-group">
+  <!-- <div class="button-group">
     <app-btn href="http://www.google.com" label="Aller sur google"></app-btn>
     <app-btn route="/clients" label="Aller sur la page client"></app-btn>
     <app-btn
@@ -39,7 +45,7 @@
       (clicked)="testButton()"
     ></app-btn>
     <app-btn route="/orders/add" label="Ajouter une commande"></app-btn>
-  </div>
+  </div> -->
 </app-template-a>
 
 <app-text>
