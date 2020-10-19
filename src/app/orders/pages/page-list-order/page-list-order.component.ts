@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, Renderer2, TemplateRef, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
+import { NgbModalRef, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Observable, Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 import { Order } from 'src/app/shared/models/order';
@@ -13,6 +14,11 @@ import { OrdersService } from '../../services/orders.service';
   styleUrls: ['./page-list-order.component.scss'],
 })
 export class PageListOrderComponent implements OnInit {
+
+  @ViewChild('confirmSuppModal') private confirmSuppModal: TemplateRef<any>;
+  private currentActiveModal: NgbModalRef;
+  public modalValues: Order;
+
   /* public ordersList: Order[]; */
   public orders: Order[];
   public collectionOrders$: Observable<Order[]>;
@@ -23,7 +29,9 @@ export class PageListOrderComponent implements OnInit {
   constructor(
     private orderService: OrdersService,
     private router: Router,
-    private alertService: AlertService
+    private alertService: AlertService,
+    private renderer: Renderer2,
+    private modalService: NgbModal,
     ) {}
 
     public successMsg(){
@@ -96,8 +104,28 @@ export class PageListOrderComponent implements OnInit {
     .pipe(takeUntil(this.destroy$))
     .subscribe(
       (result)=>{
+        this.dissmissModal();
         this.orderService.refresh$.next(true);
       }
     );
   }
+
+  @ViewChild('abcd',{static: true})
+  private abcd : ElementRef;
+  public onClick(){
+    const li= this.renderer.createElement('li');
+    const text=this.renderer.createText('Cliquer pour ajouter');
+    this.renderer.appendChild(li,text);
+    this.renderer.appendChild(this.abcd.nativeElement, li);
+  }
+
+  public openSuppModal(values:any){
+    this.modalValues=values;
+    this.currentActiveModal = this.modalService.open(this.confirmSuppModal);
+  }
+
+  public dissmissModal(){
+    this.currentActiveModal.dismiss();
+  }
+
 }

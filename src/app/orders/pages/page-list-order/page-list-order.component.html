@@ -4,6 +4,7 @@
     <app-btn [action]="true" (clicked)="errorMsg()" label="error"></app-btn>
     <app-btn [action]="true" (clicked)="warningMsg()" label="warning"></app-btn>
     <app-btn [action]="true" (clicked)="infoMsg()" label="info"></app-btn>
+    <app-btn route="/orders/add" label="Ajouter une commande"></app-btn>
   </div>
   <app-table-dark
     class="main-content"
@@ -31,7 +32,7 @@
       <td>
         <app-icon-update routerLink="edit/{{order.id}}"></app-icon-update>
         <app-icon-update (click)="edit(order)"></app-icon-update>
-        <app-icon-delete (click)="deleteOrder(order)"></app-icon-delete>
+        <app-icon-delete (click)="openSuppModal(order)"></app-icon-delete>
       </td>
     </tr>
   </app-table-dark>
@@ -61,3 +62,19 @@
   <h3>sub subtitle</h3>
   <p>Ceci est un texte dans un paragraphe</p>
 </app-text>
+
+
+<ul (click)="onClick()" #abcd>
+  <li>Cliquer pour ajouter li</li>
+</ul>
+
+<ng-template #confirmSuppModal let-modal>
+  <app-modal tite="Confirmation de suppression" (dissmissed)="dissmissModal()">
+    <div class="modal-body">
+      Etes-vous sur de vouloir supprimer cet élément ?
+    </div>
+    <div class="modal-footer">
+      <app-btn typeButton="button" (clicked)="deleteOrder(modalValues)" label="Valider" [action]="true"></app-btn>
+    </div>
+  </app-modal>
+</ng-template>

@@ -49,26 +49,6 @@
       "client": "titi",
       "id": 7,
       "comment": "Commentaire Titi"
-    },
-    {
-      "tjmHt": "453",
-      "nbJours": null,
-      "tva": "43645",
-      "state": "Cancel",
-      "typePresta": "formation",
-      "client": "tata",
-      "id": 8,
-      "comment": "Commentaire Tata"
-    },
-    {
-      "tjmHt": "543",
-      "nbJours": null,
-      "tva": "6",
-      "state": "Cancel",
-      "typePresta": "formation",
-      "client": "qsdfqsd",
-      "id": 9,
-      "comment": "Toto est gentil"
     }
   ],
   "clients": [
