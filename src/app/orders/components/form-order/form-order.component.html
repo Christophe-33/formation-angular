@@ -1,42 +1,42 @@
 <div class="container">
   <form [formGroup]="form" (ngSubmit)="onSubmit()">
     <div class="form-group">
-      <label for="Type">Type</label>
+      <label i18n for="Type">Type</label>
       <input type="text" formControlName="typePresta" class="form-control" id="Type">
     </div>
     <div class="form-group">
-      <label for="tjmHt">tjmHt</label>
+      <label i18n for="tjmHt">tjmHt</label>
       <input type="text" formControlName="tjmHt" class="form-control" id="tjmHt">
     </div>
     <div class="form-group">
-      <label for="nbJours">Nombre de Jours</label>
+      <label i18n for="nbJours">Nombre de Jours</label>
       <input type="text" formControlName="nbJours" class="form-control" id="tva">
     </div>
     <div class="form-group">
-      <label for="tva">Tva</label>
+      <label i18n for="tva">Tva</label>
       <input type="text" formControlName="tva" class="form-control" id="tjmHt">
     </div>
     <div class="form-group">
-      <label for="client">Client</label>
+      <label i18n for="client">Client</label>
       <input type="text" formControlName="client" class="form-control" id="client">
       <!--div class="alert alert danger" *ngIf="form.get('client').errors?.required && form.get('client').touched">
         Champs requis
       </div-->
       <div appInvalidMessage invalidRow="client">
-        <p *invalidType="'required'">
+        <p *invalidType="'required'" i18n>
           Champs obligatoire
         </p>
-        <p *invalidType="'minlength'">
+        <p *invalidType="'minlength'" i18n>
           Taille minimum X char.
         </p>
       </div>
     </div>
     <div class="form-group">
-      <label for="comment">Commentaire</label>
+      <label i18n for="comment">Commentaire</label>
       <input type="text" formControlName="comment" class="form-control" id="comment">
     </div>
     <div class="form-group">
-      <label for="state">Etat</label>
+      <label i18n for="state">Etat</label>
       <select formControlName="state" class="form-control" id="state">
         <option *ngFor="let state of states" [ngValue]="state">{{state}}</option>
       </select>
