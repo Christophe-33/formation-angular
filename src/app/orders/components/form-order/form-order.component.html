@@ -19,8 +19,16 @@
     <div class="form-group">
       <label for="client">Client</label>
       <input type="text" formControlName="client" class="form-control" id="client">
-      <div class="alert alert danger" *ngIf="form.get('client').errors?.required && form.get('client').touched">
+      <!--div class="alert alert danger" *ngIf="form.get('client').errors?.required && form.get('client').touched">
         Champs requis
+      </div-->
+      <div appInvalidMessage invalidRow="client">
+        <p *invalidType="'required'">
+          Champs obligatoire
+        </p>
+        <p *invalidType="'minlength'">
+          Taille minimum X char.
+        </p>
       </div>
     </div>
     <div class="form-group">
