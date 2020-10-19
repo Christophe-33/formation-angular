@@ -59,4 +59,16 @@ export class OrdersService {
   public deleteItem(item: Order): Observable<Order> {
     return this.http.delete<Order>(`${this.urlApi}orders/${item.id}`)
   }
+
+  public getItemByClientName(name:string):Observable<Order[]>{
+    return this.http.get<Order[]>(`${this.urlApi}orders?client=${name}`).pipe(
+      map((col)=>{
+        return col.map(
+          (item) =>{
+            return new Order(item);
+          }
+        )
+      })
+    )
+  }
 }

@@ -6,7 +6,7 @@
       "nbJours": 1,
       "tva": 20,
       "typePresta": "Formation",
-      "client": "nemesys",
+      "client": "Christophe2",
       "comment": "fssdgh",
       "id": 3
     },
@@ -16,7 +16,7 @@
       "nbJours": 5,
       "tva": 20,
       "typePresta": "Formation",
-      "client": "Atos",
+      "client": "Christophe2",
       "comment": "Comment pour Atos",
       "id": 4
     },
@@ -26,7 +26,7 @@
       "tva": null,
       "state": "In progress",
       "typePresta": null,
-      "client": null,
+      "client": "Christophe2",
       "id": 5,
       "comment": null
     },
@@ -36,7 +36,7 @@
       "tva": "3",
       "state": "Confirmed",
       "typePresta": "formation",
-      "client": "toto",
+      "client": "Christophe2",
       "id": 6,
       "comment": "Toto est gentil"
     },
@@ -49,6 +49,18 @@
       "client": "titi",
       "id": 7,
       "comment": "Commentaire Titi"
+    }
+  ],
+  "orders2":[
+    {
+      "tjmHt": "1",
+      "nbJours": null,
+      "tva": "3",
+      "state": "Confirmed",
+      "typePresta": "formation",
+      "client": "Christophe2",
+      "id": 6,
+      "comment": "Toto est gentil"
     }
   ],
   "clients": [

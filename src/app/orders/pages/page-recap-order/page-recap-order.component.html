@@ -1,0 +1,44 @@
+<app-template-a title="Commandes" subtitle="Liste">
+  <div class="button-group">
+    <app-btn route="/orders/add" label="Ajouter une commande"></app-btn>
+  </div>
+  <app-table-dark
+    class="main-content"
+    [headers]="tableHearders"
+    *ngIf="collectionOrders$ | async as ordersList"
+  >
+    <tr *ngFor="let order of ordersList">
+      <td>{{ order.typePresta }}</td>
+      <td>{{ order.client | uppercase | lowercase }}</td>
+      <td>{{ order.nbJours }}</td>
+      <td>{{ order.tjmHt | currency: "EUR" }}</td>
+      <td>{{ order | total | currency: "EUR" }}</td>
+      <td>{{ order | total: "ttc" | currency: "EUR" }}</td>
+      <td appState [state]="order.state">
+        <select (change)="changeState(order, $event)">
+          <option
+            *ngFor="let state of states"
+            [value]="state"
+            [selected]="state === order.state"
+          >
+            {{ state }}
+          </option>
+        </select>
+      </td>
+      <td>
+        <app-icon-update routerLink="edit/{{order.id}}"></app-icon-update>
+      </td>
+    </tr>
+  </app-table-dark>
+  <!--<div *ngIf="!ordersList">Page en cours de chargement...</div-->
+  <!-- <div class="button-group">
+    <app-btn href="http://www.google.com" label="Aller sur google"></app-btn>
+    <app-btn route="/clients" label="Aller sur la page client"></app-btn>
+    <app-btn
+      [action]="true"
+      label="Test action"
+      (clicked)="testButton()"
+    ></app-btn>
+    <app-btn route="/orders/add" label="Ajouter une commande"></app-btn>
+  </div> -->
+</app-template-a>
